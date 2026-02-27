@@ -1,5 +1,17 @@
 # Hospitality Business Analytics Portfolio
 
-This repository documents analytics on hospitality business with SQL, Python, PowerBI etc.
+## Overview
+This repository demonstrates my SQL learning and hospitality BI analysis projects.
 
-More projects coming soon.
+## Repository Structure
+- sql-learning/
+- data/
+- kpi-analysis/
+- case-studies/
+
+## Skills Demonstrated
+- Aggregation
+- Joins
+- Window Functions
+- KPI Modeling
+- Business Insight Translation
