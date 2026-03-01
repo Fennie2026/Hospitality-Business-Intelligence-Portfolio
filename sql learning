@@ -1,1 +1,55 @@
+# ORDER BY Column_name DESC
 
+# Wild card WHERE Column_name LIKE '%a' , 'a%b', 'a%'
+
+# WHERE AND Example WHERE CustomerId IN (56,58)
+AND Total BETWEEN 1.00 AND 5.00
+
+#Group BY
+SELECT 列名, 聚合函数()
+FROM 表名
+GROUP BY 列名;
+⚠ 规则：
+SELECT 里出现的非聚合列，必须出现在 GROUP BY 里
+************************************************************************************
+#COUNT的三种用法
+1-COUNT(*) —— 统计所有行
+
+SELECT COUNT(*)
+FROM invoices;
+
+👉 统计 invoices 表里一共有多少行（多少订单）
+
+2-COUNT(column_name) —— 统计非空值
+SELECT COUNT(phone)
+FROM customers;
+统计 customers 表里 phone 不为 NULL 的数量。
+
+3-COUNT(DISTINCT column) —— 去重计数
+SELECT COUNT(DISTINCT customer_id)
+FROM invoices;
+👉 统计有多少不同的客户下过订单。
+***********************************************************************************
+#select语句不仅是选“列”，
+SELECT = 返回一个表达式的结果
+它可以返回：
+列
+计算结果
+聚合结果
+字符串
+数学运算
+函数结果
+***************************************************************************************
+#Or
+WHERE column_name Operator  A OR B
+请注意到一旦系统匹配上条件A，就不会持续去寻找B了。比如查找一个product name可能是'Tofu'或‘Konfu’，只要查到了Tofu这个产品，就不会继续查找Konfu这个名字了
+************************************************************************************************
+#OR with AND
+-SQL processes AND before OR
+Example:
+A:WHERE SupplierId=9 OR SupplierId=10 AND Unit price >= 15
+VS
+B:WHERE (SupplierId=9 OR SupplierId=10) AND Unit price >= 15
+在A例子中，数据库将会先返回Unit price大于等于15的列，在此基础上再返回SupplierId是9或10的列。而在B例子中，数据库会先计算括号里的SupplierId，只有当是9或10时，才会返回。
+在返回的列基础上再进一步找出哪个Unit Price大于等于15
+***************************************************************************************
